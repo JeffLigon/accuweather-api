@@ -2,6 +2,7 @@ import requests
 import RPi.GPIO as GPIO
 import time
 
+# initialize lights
 GPIO.setmode(GPIO.BCM)
 redLED = 17
 yellowLED = 27
