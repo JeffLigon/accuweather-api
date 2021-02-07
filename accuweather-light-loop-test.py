@@ -1,30 +1,33 @@
 import requests
-from gpiozero import LED
+import RPi.GPIO as GPIO
 import time
 
-redLED = LED(17)
-yellowLED = LED(27)
-greenLED = LED(22)
+GPIO.setmode(GPIO.BCM)
+redLED = 17
+yellowLED = 27
+greenLED = 22
+GPIO.setup(redLED, GPIO.OUT)
+GPIO.setup(yellowLED, GPIO.OUT)
+GPIO.setup(greenLED, GPIO.OUT)
 
 while True:
-   response = requests.get(ApiUrl) 
-   weather = response.json() 
-   currentTemp = weather[0]['Temperature']['Imperial']['Value']
+   GPIO.output(redLED, GPIO.LOW)
+   GPIO.output(yellowLED, GPIO.LOW)
+   GPIO.output(greenLED, GPIO.LOW)
    
-   print ('The current weather in Plano is ' + str(weather[0]['WeatherText']) + '.')
+   currentTemp = float(input("What is the current temperature? "))
    print ('The current temperature in Plano is ' + str(currentTemp) + ' F.')
-   print (currentTemp)
    
    if currentTemp <= 40: 
-       redLED.on()
-       print ('red')
-   elif 61 > currentTemp > 80: 
-       yellowLED.on()
-       print ('yellow')
+       GPIO.output(redLED, GPIO.HIGH)
+       print ('red light')
+   elif currentTemp > 40 and currentTemp < 80: 
+       GPIO.output(yellowLED, GPIO.HIGH)
+       print ('yellow light')
    else: 
-       greenLED.on()
-       print ('green')
-   time.sleep(1800) # 30 minutes 
+       GPIO.output(greenLED, GPIO.HIGH)
+       print ('green light')
+   time.sleep(3) # 30 minutes = 1800 
 
-  
+
 
