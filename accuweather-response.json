@@ -1,0 +1,20 @@
+{
+    'LocalObservationDateTime': '2021-02-06T14:08:00-06:00',
+    'EpochTime': 1612642080,
+    'WeatherText': 'Mostly cloudy',
+    'WeatherIcon': 6,
+    'HasPrecipitation': False,
+    'PrecipitationType': None,
+    'IsDayTime': True,
+    'Temperature': {
+        'Metric': {
+            'Value': 11.5,
+            'Unit': 'C',
+            'UnitType': 17},
+        'Imperial': {
+            'Value': 53.0,
+            'Unit': 'F',
+            'UnitType': 18}},
+    'MobileLink': 'http://m.accuweather.com/en/us/plano-tx/75074/current-weather/340969?lang=en-us',
+    'Link': 'http://www.accuweather.com/en/us/plano-tx/75074/current-weather/340969?lang=en-us'
+}
