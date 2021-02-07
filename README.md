@@ -7,7 +7,7 @@ From [Getting Started With Raspberry Pi, 3rd Edition, Ch. 10.](https://learning.
 ## Main app is "Current Conditions with Lights"
 
 This app polls the Accuweather API every 30 minutes to retrieve the current weather conditions. 
-It then takes the current temperature and lights one of three LEDs:
+It then lights one of three LEDs based on the current temperature:
  - less than 40 degress F = red light
  - between 40 and 60 degrees F = yellow light
  - greater than 60 degress F = green light
