@@ -20,6 +20,11 @@ while True:
    weather = response.json() 
    currentTemp = weather[0]['Temperature']['Imperial']['Value']
    
+   # reset all lights off
+   GPIO.output(redLED, GPIO.LOW) 
+   GPIO.output(yellowLED, GPIO.LOW)
+   GPIO.output(greenLED, GPIO.LOW)
+   
    print ('The current weather in Plano is ' + str(weather[0]['WeatherText']) + '.')
    print ('The current temperature in Plano is ' + str(currentTemp) + ' F.')
       
